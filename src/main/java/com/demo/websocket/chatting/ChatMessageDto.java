@@ -14,5 +14,5 @@ public class ChatMessageDto {
     private MessageType type;       //메세지타입
     private String roomId;          //방번호
     private String sender;          //보낸사람
-    private String message;         //메세지0
+    private String message;         //메세지
 }
