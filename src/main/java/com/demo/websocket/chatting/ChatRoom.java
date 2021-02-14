@@ -29,7 +29,7 @@ public class ChatRoom {
     }
 
     private void sendMessage(ChatMessageDto message, ChatService chatService) {
-        sessions.parallelStream().forEach(session -> charService.sendMessage(session,message));
+        sessions.parallelStream().forEach(session -> chatService.sendMessage(session,message));
     }
 
 }
