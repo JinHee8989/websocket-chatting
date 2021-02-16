@@ -1,5 +1,6 @@
-package com.demo.websocket.chatting;
+package com.demo.websocket.chatting.service;
 
+import com.demo.websocket.chatting.ChatRoom;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +17,7 @@ import java.util.*;
 @Service
 public class ChatService {
     private final ObjectMapper objectMapper;
-    private Map<String,ChatRoom> chatRooms;
+    private Map<String, ChatRoom> chatRooms;
 
     @PostConstruct
     private void init(){

@@ -1,5 +1,7 @@
 package com.demo.websocket.chatting;
 
+import com.demo.websocket.chatting.model.dto.ChatMessageDto;
+import com.demo.websocket.chatting.service.ChatService;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.web.socket.WebSocketSession;
@@ -19,7 +21,7 @@ public class ChatRoom {
         this.name = name;
     }
 
-    public void handlerActions(WebSocketSession session, ChatMessageDto message,ChatService chatService){   //입장과 대화하기 기능 분기처리
+    public void handlerActions(WebSocketSession session, ChatMessageDto message, ChatService chatService){   //입장과 대화하기 기능 분기처리
         if(message.getType().equals(ChatMessageDto.MessageType.ENTER)){
             sessions.add(session);
             message.setMessage(message.getSender()+"님이 입장하셨습니다.");

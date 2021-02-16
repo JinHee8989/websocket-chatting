@@ -1,4 +1,4 @@
-package com.demo.websocket.chatting;
+package com.demo.websocket.chatting.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
