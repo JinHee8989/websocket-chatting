@@ -27,6 +27,6 @@ public class WebsocketChatHandler extends TextWebSocketHandler {
 //        session.sendMessage(textMessage);
         ChatMessageDto chatMessageDto = objectMapper.readValue(payload,ChatMessageDto.class); //웹소켓 클라이언트로부터 메세지를 받아 채팅메세지 객체로 변환
         ChatRoom chatRoom = chatService.findRoomById(chatMessageDto.getRoomId()); //전달받은 메세지에 담긴 채팅방 id로 발송대상 채팅방 정보를 조회
-        chatRoom.handlerActions(session, chatMessageDto,chatService);   //채팅방에 입장해 있는 모든 클라이언트에게 타입에 따른 메세지 전송!!!분발하자!!!!화이팅!!!!
+        chatRoom.handlerActions(session, chatMessageDto,chatService);   //채팅방에 입장해 있는 모든 클라이언트에게 타입에 따른 메세지 전송!!!
     }
 }
