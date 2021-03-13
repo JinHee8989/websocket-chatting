@@ -23,7 +23,7 @@ public class WebsocketChatHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         String payload = message.getPayload();
         log.info("payload ::: " + payload);
-//        TextMessage textMessage = new TextMessage("여기가 바로 채팅서버!!");
+//        TextMessage textMessage = new TextMessage("여기가 바로 채팅서버!");
 //        session.sendMessage(textMessage);
         ChatMessageDto chatMessageDto = objectMapper.readValue(payload,ChatMessageDto.class); //웹소켓 클라이언트로부터 메세지를 받아 채팅메세지 객체로 변환
         ChatRoom chatRoom = chatService.findRoomById(chatMessageDto.getRoomId()); //전달받은 메세지에 담긴 채팅방 id로 발송대상 채팅방 정보를 조회
